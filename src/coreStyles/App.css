@@ -1,7 +1,7 @@
 .App{
     height: 100vh ;
     background: inherit;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     /* width: 90%; */
     width: 100%;
     max-width: 700px;
