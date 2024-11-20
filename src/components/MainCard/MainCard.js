@@ -33,7 +33,9 @@ export default function MainCard({ flow, setSliderStep }) {
             clickable: true,
             el: ".custom-pagination",
           }}
-          speed={775}
+          speed={675}
+          threshold={25} 
+          touchRatio={0.2} 
           style={{ width: "100%", height: "100vh" }}
           spaceBetween={50}
           slidesPerView={1}
