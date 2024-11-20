@@ -1,16 +1,26 @@
+import { useRef, useState } from "react";
 // import logo from "./assets/logo.svg";
 import "./coreStyles/App.css";
 
 import Header from "./components/Header/Header";
 import Main from "./components/MainCard/MainCard";
-import ProgressBar from "./components/ProgressBar/ProgressBar";
+import workoutData from "./workoutData.json";
 
 function App() {
+  const { workouts } = workoutData;
+  const [sliderStep, setSliderStep] = useState(0)
+  
+  const flow = useRef({
+    step: 0,
+    endStep: workouts.length,
+    workouts: Object.values(workouts),
+  });
+  // eslint-disable-next-line no-unused-vars
+
   return (
     <div className="App">
-      <Header />
-      <ProgressBar />
-      <Main />
+      <Header sliderStep={sliderStep} />
+      <Main flow={flow} setSliderStep={setSliderStep} />
     </div>
   );
 }

@@ -1,6 +1,10 @@
-.header{
-    height: 10vh;
+.header {
+    height: 15vh;
+    /* min-height: 10%; */
+    overflow: hidden;
     width: 100%;
     padding: 20px;
-    background-color: rgb(217, 213, 205);
+    box-sizing: border-box;
+    border-radius: 0 0 35px 35px;
+    background-color: rgb(237, 230, 216);
 }
