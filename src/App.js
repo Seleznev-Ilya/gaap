@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="version" >v.1.1.1</div>
       <Header sliderStep={sliderStep} />
       <Main flow={flow} setSliderStep={setSliderStep} />
     </div>

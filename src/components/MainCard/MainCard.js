@@ -35,7 +35,7 @@ export default function MainCard({ flow, setSliderStep }) {
           }}
           speed={660}
           threshold={75} 
-          touchRatio={1.2} 
+          touchRatio={1.5} 
           style={{ width: "100%", height: "100vh" }}
           spaceBetween={50}
           slidesPerView={1}
