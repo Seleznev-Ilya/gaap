@@ -1,45 +1,54 @@
-import { useRef, useState } from "react";
-// import logo from "./assets/logo.svg";
+import React, { useState } from "react";
 import "./coreStyles/App.css";
-
+import workoutData from "./JSON/workoutData.json";
 import Header from "./components/Header/Header";
 import Main from "./components/MainCard/MainCard";
-import workoutData from "./workoutData.json";
+import { WARMUP, COOLDOWN, BODY_GROUPS, BODY_GROUP_TYPES } from "./constants";
 
 function App() {
+
+  // const result = Object.entries(BODY_GROUPS).filter((group) =>
+  //   test.includes(group[0])
+  // );
+
   const { workouts } = workoutData;
-  const [sliderStep, setSliderStep] = useState(0)
-  
-  const flow = useRef({
+  const [sliderStep, setSliderStep] = useState({
     step: 0,
-    endStep: workouts.length,
+    endStep: Object.values(workouts).length,
     workouts: Object.values(workouts),
+    exercises: [
+      WARMUP,
+      BODY_GROUPS[BODY_GROUP_TYPES[0]],
+      BODY_GROUPS[BODY_GROUP_TYPES[1]],
+      COOLDOWN,
+    ].reduce((total, item) => total.concat(item.exercises), []),
   });
-  // eslint-disable-next-line no-unused-vars
+  // console.log(
+  //   [
+  //     WARMUP,
+  //     BODY_GROUPS[BODY_GROUP_TYPES[0]],
+  //     BODY_GROUPS[BODY_GROUP_TYPES[1]],
+  //     COOLDOWN,
+  //   ],
+  //   sliderStep.exercises
+  // );
+  // const [sliderStep, setSliderStep] = useState({
+  //   step: 0,
+  //   endStep: Object.values(workouts).length,
+  //   workouts: Object.values(workouts),
+  //   exercises: Object.values(workouts).reduce(
+  //     (total, item) => total.concat(item.exercises),
+  //     []
+  //   ),
+  // });
 
   return (
     <div className="App">
-      <div className="version" >v.1.1.1</div>
+      <div className="version">v.1.1.3</div>
       <Header sliderStep={sliderStep} />
-      <Main flow={flow} setSliderStep={setSliderStep} />
+      <Main setSliderStep={setSliderStep} sliderStep={sliderStep} />
     </div>
   );
 }
-// {
-//   <header className="App-header">
-//     <img src={logo} className="App-logo" alt="logo" />
-//     <p>
-//       Edit <code>src/App.js</code> and save to reload.
-//     </p>
-//     <a
-//       className="App-link"
-//       href="https://reactjs.org"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Learn React
-//     </a>
-//   </header>
-// }
 
 export default App;

@@ -1,6 +1,10 @@
 import React from "react";
-import "./ProgressBarStyle.css"
+import "./ProgressBarStyle.css";
 
 export default function ProgressBar() {
-  return <div className="ProgressBar">ProgressBar 1,2,3</div>;
+  return (
+    <div className="ProgressBar">
+      Warmup {" > "} Chest {" > "} Hands {" > "} Calm down
+    </div>
+  );
 }

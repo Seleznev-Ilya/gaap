@@ -1,4 +1,5 @@
 {
+  "typesList": ["cardio", "flexibility", "weight"],
   "workouts": {
     "warmup": {
       "group": "warmup",
@@ -6,12 +7,17 @@
       "exercises": [
         {
           "name": "Кардио",
+          "type": "cardio",
           "duration": "5 минут",
-          "options": ["беговая дорожка", "орбитрек", "велотренажёр"]
+          "time": "5 минут",
+          "options": ["беговая дорожка", "орбитрек", "велотренажёр"],
+          "isActivated": false
         },
         {
           "name": "Динамическая растяжка",
-          "target": ["плечи", "грудь"]
+          "type": "flexibility",
+          "target": ["плечи", "грудь"],
+          "isActivated": false
         }
       ]
     },
@@ -21,23 +27,36 @@
       "exercises": [
         {
           "name": "Жим штанги лежа",
+          "type": "weight",
+          "duration": null,
           "sets": 4,
-          "reps": "8–12"
+          "reps": "8–12",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Жим гантелей на наклонной скамье",
+          "type": "weight",
           "sets": 4,
-          "reps": "10–12"
+          "reps": "10–12",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Разведение гантелей на горизонтальной скамье",
+          "type": "weight",
           "sets": 3,
-          "reps": "12–15"
+          "reps": "12–15",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Кроссовер на блоке",
+          "type": "weight",
           "sets": 3,
-          "reps": "12–15"
+          "reps": "12–15",
+          "kgPerRep": null,
+          "isActivated": false
         }
       ]
     },
@@ -47,23 +66,35 @@
       "exercises": [
         {
           "name": "Жим гантелей сидя",
+          "type": "weight",
           "sets": 4,
-          "reps": "8–12"
+          "reps": "8–12",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Подъём гантелей через стороны",
+          "type": "weight",
           "sets": 3,
-          "reps": "12–15"
+          "reps": "12–15",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Подъём штанги к подбородку",
+          "type": "weight",
           "sets": 3,
-          "reps": "10–12"
+          "reps": "10–12",
+          "kgPerRep": null,
+          "isActivated": false
         },
         {
           "name": "Обратные разведения в наклоне",
+          "type": "weight",
           "sets": 3,
-          "reps": "12–15"
+          "reps": "12–15",
+          "kgPerRep": null,
+          "isActivated": false
         }
       ]
     },
@@ -73,12 +104,17 @@
       "exercises": [
         {
           "name": "Планка",
+          "type": "cardio",
           "sets": "1–3",
-          "duration": "30–60 секунд"
+          "duration": "30–60 секунд",
+          "time": "30–60 секунд",
+          "isActivated": false
         },
         {
           "name": "Растяжка",
-          "target": ["грудь", "плечи"]
+          "type": "flexibility",
+          "target": ["грудь", "плечи"],
+          "isActivated": false
         }
       ]
     }
