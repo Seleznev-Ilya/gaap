@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/gaap/static/css/main.f4cd3e7f.css",
-    "main.js": "/gaap/static/js/main.350a7fcc.js",
-    "static/js/453.4a1cba92.chunk.js": "/gaap/static/js/453.4a1cba92.chunk.js",
+    "main.css": "/gaap/static/css/main.d37668c9.css",
+    "main.js": "/gaap/static/js/main.7030e4d8.js",
+    "static/media/AppLogo.svg": "/gaap/static/media/AppLogo.254f51739f3b05e6ac419d5dff99aa1a.svg",
     "index.html": "/gaap/index.html",
-    "main.f4cd3e7f.css.map": "/gaap/static/css/main.f4cd3e7f.css.map",
-    "main.350a7fcc.js.map": "/gaap/static/js/main.350a7fcc.js.map",
-    "453.4a1cba92.chunk.js.map": "/gaap/static/js/453.4a1cba92.chunk.js.map"
+    "main.d37668c9.css.map": "/gaap/static/css/main.d37668c9.css.map",
+    "main.7030e4d8.js.map": "/gaap/static/js/main.7030e4d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4cd3e7f.css",
-    "static/js/main.350a7fcc.js"
+    "static/css/main.d37668c9.css",
+    "static/js/main.7030e4d8.js"
   ]
 }
