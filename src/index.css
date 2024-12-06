@@ -5,8 +5,9 @@
 }
 
 body {
-  background-color: rgb(34, 34, 34);
-  font-family: 'Roboto';
+  background-color: black;
+  /* background-color: rgb(34, 34, 34); */
+  font-family: sans-serif, 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
