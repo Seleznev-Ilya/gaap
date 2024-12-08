@@ -5,6 +5,7 @@ import MomentumHeader from "components/common/MomentumHeader/MomentumHeader";
 
 import "./HomeStyle.css";
 import BodyPartPicker from "components/common/BodyPartPicker/BodyPartPicker";
+import Button from "components/common/Button/Button";
 
 function Home() {
   return (

@@ -1,7 +1,7 @@
 {
   "name": "gaap",
   "version": "0.1.0",
-  "homepage": "https://seleznev-ilya.github.io/gaap/",
+  "homepage": "https://seleznev-ilya.github.io/gaap",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.5",

@@ -3,8 +3,10 @@ import { css } from "@emotion/react";
 import theme from "core/styles/theme";
 import Button from "../Button/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BodyPartPicker() {
+  const navigate = useNavigate();
   const bodyPartPickerList = [
     [
       { id: 1, name: "Chest" },
@@ -28,7 +30,7 @@ function BodyPartPicker() {
       <div css={style.header}>
         <p css={style.headerText}>Select the areas you want to focus on</p>
       </div>
-      <span css={style.counter}>0/2</span>
+      <span css={style.counter}>{activePicker.length}/2</span>
       <div css={style.controlsWrapper}>
         {bodyPartPickerList.map((section, idx) => {
           return (
@@ -41,7 +43,8 @@ function BodyPartPicker() {
                   onClick={(e: any) =>
                     activePicker.includes(id)
                       ? setActivePicker(activePicker.filter((n) => n !== id))
-                      : setActivePicker([...activePicker, id])
+                      : activePicker.length < 2 &&
+                        setActivePicker([...activePicker, id])
                   }
                   text={name}
                 />
@@ -50,6 +53,14 @@ function BodyPartPicker() {
           );
         })}
       </div>
+      {Boolean(activePicker.length) && (
+        <Button
+          isActive={Boolean(activePicker.length)}
+          styleCss={style.button}
+          onClick={() => navigate("/preview")}
+          text={"OK"}
+        />
+      )}
     </div>
   );
 }
@@ -62,7 +73,11 @@ const style = {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-     background: linear-gradient(60deg, ${theme.colors.grey.dark} 10% , #000000 100%);
+    background: linear-gradient(
+      60deg,
+      ${theme.colors.grey.dark} 10%,
+      #000000 100%
+    );
   `,
   header: css`
     background-color: ${theme.colors.grey.dark};
@@ -87,7 +102,7 @@ const style = {
     flex-wrap: wrap;
     flex-direction: row;
     align-item: center;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
     padding: 5px 0 20px;
   `,
@@ -99,8 +114,9 @@ const style = {
   button: css`
     min-width: 70px;
     cursor: pointer;
+    font-size: 16px;
     font-weight: bold;
-    padding: 5px 15px;
+    padding: 8px 16px;
     transition: transform 0.2s, background-color 0.5s;
   `,
 };

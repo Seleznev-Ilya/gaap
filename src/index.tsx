@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/gaap">
         <App />
       </BrowserRouter>
     </Provider>
