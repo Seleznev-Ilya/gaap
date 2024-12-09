@@ -16,7 +16,7 @@ const style = {
     // overflow: hidden;
     margin: 0 auto;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 1px);
     max-width: 700px;
     padding: 5% 10px 0;
   `,
