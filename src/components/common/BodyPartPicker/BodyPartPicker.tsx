@@ -2,29 +2,19 @@
 import { css } from "@emotion/react";
 import theme from "core/styles/theme";
 import Button from "../Button/Button";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-function BodyPartPicker() {
-  const navigate = useNavigate();
-  const bodyPartPickerList = [
-    [
-      { id: 1, name: "Chest" },
-      { id: 2, name: "Hands" },
-      { id: 3, name: "Legs" },
-      { id: 4, name: "Back" },
-    ],
-    [
-      { id: 5, name: "Shoulders" },
-      { id: 6, name: "But" },
-      { id: 7, name: "Full body" },
-    ],
-    [
-      { id: 0, name: "Warmup" },
-      { id: 9, name: "Cooldown" },
-    ],
-  ];
-  const [activePicker, setActivePicker] = useState<number[]>([]);
+interface Types {
+  activePicker: number[];
+  setActivePicker: (value: number[]) => void;
+  bodyPartPickerList: { id: number; name: string }[][];
+  navigate: (path: string) => void;
+}
+function BodyPartPicker({
+  activePicker,
+  setActivePicker,
+  navigate,
+  bodyPartPickerList,
+}: Types) {
   return (
     <div css={style.wrapper}>
       <div css={style.header}>
@@ -53,14 +43,6 @@ function BodyPartPicker() {
           );
         })}
       </div>
-      {Boolean(activePicker.length) && (
-        <Button
-          isActive={Boolean(activePicker.length)}
-          styleCss={style.button}
-          onClick={() => navigate("/preview")}
-          text={"OK"}
-        />
-      )}
     </div>
   );
 }
@@ -68,14 +50,14 @@ function BodyPartPicker() {
 const style = {
   wrapper: css`
     max-width: 360px;
-    border: 1px solid ${theme.colors.grey.light};
+    border: 2px solid ${theme.colors.grey.light};
     border-radius: ${theme.borderRadius.large};
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     background: linear-gradient(
-      60deg,
-      ${theme.colors.grey.dark} 10%,
+      45deg,
+      ${theme.colors.grey.dark} 15%,
       #000000 100%
     );
   `,
@@ -85,17 +67,17 @@ const style = {
     padding: ${theme.borderRadius.default};
     text-align: center;
     border-radius: ${theme.borderRadius.large} ${theme.borderRadius.large} 0 0;
-    border-bottom: 1px solid ${theme.colors.grey.light};
+    border-bottom: 2px solid ${theme.colors.grey.light};
     margin-bottom: 25px;
   `,
   headerText: css`
     color: ${theme.colors.white.text};
-    font-style: 18px;
+    font-size: 16px;
   `,
   counter: css`
     color: ${theme.colors.orange};
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   `,
   controlsWrapper: css`
     display: flex;
@@ -108,16 +90,12 @@ const style = {
   `,
   subControlsWrapper: css`
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   `,
   button: css`
     min-width: 70px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 16px;
-    transition: transform 0.2s, background-color 0.5s;
   `,
 };
 

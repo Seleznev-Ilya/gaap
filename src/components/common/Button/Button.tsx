@@ -19,13 +19,17 @@ function Button({ onClick, isActive = false, text, styleCss }: T) {
 const style = {
   button: (isActive: boolean) => css`
     min-width: 70px;
-    padding: 5px;
     border: 1px solid ${theme.colors.grey.light};
     border-radius: ${theme.borderRadius.large};
     background-color: ${isActive
       ? theme.colors.orange
-      : theme.colors.black.deepDark};
-    color: ${isActive ? theme.colors.black.deepDark : theme.colors.white.text};
+      : theme.colors.grey.dark};
+    color: ${isActive ? theme.colors.grey.dark : theme.colors.white.text};
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: transform 0.2s, background-color 0.5s;
   `,
 };
 

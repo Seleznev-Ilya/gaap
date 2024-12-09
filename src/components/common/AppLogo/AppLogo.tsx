@@ -8,9 +8,9 @@ function Logo() {
 
 const style = {
   appLogo: css`
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 13%;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto 5%;
     display: block;
   `,
 };
