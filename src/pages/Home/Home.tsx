@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
-import AppLogo from "../../components/common/AppLogo/AppLogo";
+// import AppLogo from "../../components/common/AppLogo/AppLogo";
 import MomentumHeader from "components/common/MomentumHeader/MomentumHeader";
 
 import "./HomeStyle.css";
@@ -32,30 +32,46 @@ function Home() {
   ];
   const [activePicker, setActivePicker] = useState<number[]>([]);
   return (
-    <Fragment>
-      <AppLogo />
-      <MomentumHeader />
-      <BodyPartPicker
-        activePicker={activePicker}
-        setActivePicker={setActivePicker}
-        bodyPartPickerList={bodyPartPickerList}
-        navigate={navigate}
-      />
-      {Boolean(activePicker.length) && (
-        <Button
-          isActive={Boolean(activePicker.length)}
-          styleCss={style.button}
-          onClick={() => navigate("/preview")}
-          text={"OK"}
+    <div css={style.homeWrapper}>
+      <div css={style.container}>
+        <MomentumHeader />
+        <BodyPartPicker
+          activePicker={activePicker}
+          setActivePicker={setActivePicker}
+          bodyPartPickerList={bodyPartPickerList}
+          navigate={navigate}
         />
-      )}
-    </Fragment>
+      </div>
+      {/* {Boolean(activePicker.length) && ( */}
+      <Button
+        isActive={Boolean(activePicker.length)}
+        styleCss={style.button}
+        onClick={() => navigate("/preview")}
+        text={"OK"}
+      />
+      {/* )} */}
+    </div>
   );
 }
 
 const style = {
+  homeWrapper: css`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  `,
+  container: css`
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 75%;
+    max-height: 100%;
+  `,
   button: css`
-    width: calc(100% - 20px);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 3%;
     height: 50px;
     cursor: pointer;
     border-radius: 30px;
@@ -66,8 +82,6 @@ const style = {
     font-weight: bold;
     padding: 8px 16px;
     transition: transform 0.2s, background-color 0.5s;
-    position: absolute;
-    bottom: 3%;
   `,
 };
 

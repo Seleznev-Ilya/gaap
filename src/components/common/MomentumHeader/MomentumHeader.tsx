@@ -31,7 +31,7 @@ const style = {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 10%;
+    // margin-bottom: 5%;
   `,
   momentumEmoji: css`
     font-size: 25.47px;

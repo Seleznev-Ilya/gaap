@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import theme from "core/styles/theme";
 import Button from "../Button/Button";
+import AppLogo from "../AppLogo/AppLogo";
 
 interface Types {
   activePicker: number[];
@@ -42,6 +43,7 @@ function BodyPartPicker({
             </div>
           );
         })}
+        <AppLogo />
       </div>
     </div>
   );
@@ -49,29 +51,27 @@ function BodyPartPicker({
 
 const style = {
   wrapper: css`
-    max-width: 360px;
-    border: 2px solid ${theme.colors.grey.light};
+    width: 100%;
+    max-width: 480px;
+    min-width: 300px;
+    border: 2px solid ${theme.colors.grey.default};
     border-radius: ${theme.borderRadius.large};
     display: flex;
     flex-direction: column;
     margin: 0 auto 50px;
-    background: linear-gradient(
-      45deg,
-      ${theme.colors.grey.dark} 15%,
-      #000000 100%
-    );
+    background-color: ${theme.colors.grey["100"]};
   `,
   header: css`
-    background-color: ${theme.colors.grey.dark};
+    background-color: ${theme.colors.grey["75"]};
     width: 100%;
     padding: ${theme.borderRadius.default};
     text-align: center;
     border-radius: ${theme.borderRadius.large} ${theme.borderRadius.large} 0 0;
-    border-bottom: 2px solid ${theme.colors.grey.light};
+    border-bottom: 2px solid ${theme.colors.grey.default};
     margin-bottom: 25px;
   `,
   headerText: css`
-    color: ${theme.colors.white.text};
+    color: ${theme.colors.white["100"]};
     font-size: 16px;
   `,
   counter: css`
@@ -81,8 +81,7 @@ const style = {
   `,
   controlsWrapper: css`
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-item: center;
     gap: 12px;
     justify-content: center;
@@ -95,6 +94,7 @@ const style = {
     justify-content: center;
   `,
   button: css`
+    border: none;
     min-width: 70px;
   `,
 };

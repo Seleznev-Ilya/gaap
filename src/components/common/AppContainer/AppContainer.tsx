@@ -13,10 +13,10 @@ const style = {
   appContainer: css`
     background: inherit;
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
     margin: 0 auto;
-    width: 100%;
     height: calc(100vh - 1px);
+    width: 100vw;
     max-width: 700px;
     padding: 5% 10px 0;
   `,
