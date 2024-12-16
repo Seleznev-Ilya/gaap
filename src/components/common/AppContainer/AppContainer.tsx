@@ -15,7 +15,7 @@ const style = {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    height: calc(100vh - 1px);
+    height: 100dvh;
     width: 100vw;
     max-width: 700px;
     padding: 5% 10px 0;
