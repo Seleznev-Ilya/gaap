@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
-import theme from "core/styles/theme";
+import theme from "core/constants/theme";
 
 interface T {
   onClick: (e: any) => void;
@@ -19,17 +19,17 @@ function Button({ onClick, isActive = false, text, styleCss }: T) {
 const style = {
   button: (isActive: boolean) => css`
     min-width: 70px;
-    border: 1px solid ${theme.colors.grey.default};
+    border: none;
     border-radius: ${theme.borderRadius.large};
     background-color: ${isActive
       ? theme.colors.orange
-      : theme.colors.grey["75"]};
-    color: ${isActive ? theme.colors.grey["100"] : theme.colors.white.default};
+      : theme.colors.grey["50"]};
+    color: ${isActive ? theme.colors.grey["100"] : theme.colors.white[50]};
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    padding: 8px 16px;
-    transition: transform 0.2s, background-color 0.5s;
+    padding: 7px 14px;
+    transition: transform 0.2s, background-color 0.5s, width 0.5s ease;
   `,
 };
 

@@ -1,10 +1,8 @@
-import MomentumHeader from 'components/common/MomentumHeader/MomentumHeader'
-import React from 'react'
+import MomentumHeader from "components/MomentumHeader/MomentumHeader";
+import React from "react";
 
 function MainFlow() {
-  return (
-    <MomentumHeader />
-  )
+  return <MomentumHeader />;
 }
 
-export default MainFlow
+export default MainFlow;

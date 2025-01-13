@@ -1,4 +1,4 @@
-import { MOMENTUM_LOCATION_DATA } from "./constants";
+import { MOMENTUM_LOCATION_DATA } from "core/constants/common";
 
 export const getMomentumData = (pathname: string) =>
   MOMENTUM_LOCATION_DATA[

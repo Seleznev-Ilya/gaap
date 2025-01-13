@@ -1,7 +1,7 @@
-import theme from "../../../core/styles/theme";
-import ICONS from "../../../core/icons";
+import theme from "../../core/constants/theme";
+import ICONS from "../../core/icons";
+import { IconsType } from "./types";
 
-type IconsType = keyof typeof ICONS;
 interface IconProps {
   color?: string;
   viewBox?: string;
@@ -11,7 +11,7 @@ interface IconProps {
 }
 
 export default function SVGIcon({
-  color = theme.colors.white.default,
+  color = theme.colors.white[100],
   iconName,
   iconPath,
   size = 32,
@@ -20,6 +20,7 @@ export default function SVGIcon({
   const width = typeof size === "number" ? size : size[0];
   const height = typeof size === "number" ? size : size[1];
   const viewBoxParams = !!viewBox ? viewBox : `0 0 ${width} ${height}`;
+
   return (
     <svg
       width={`${width}px`}

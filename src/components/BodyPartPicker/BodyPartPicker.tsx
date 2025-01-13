@@ -1,27 +1,30 @@
 /** @jsxImportSource @emotion/react */
+import Button from "components/Button/Button";
+import theme from "core/constants/theme";
 import { css } from "@emotion/react";
-import theme from "core/styles/theme";
-import Button from "../Button/Button";
-import AppLogo from "../AppLogo/AppLogo";
 
 interface Types {
   activePicker: number[];
-  setActivePicker: (value: number[]) => void;
+  handleButtonClick: (value: number) => void;
   bodyPartPickerList: { id: number; name: string }[][];
   navigate: (path: string) => void;
 }
+
 function BodyPartPicker({
   activePicker,
-  setActivePicker,
+  handleButtonClick,
   navigate,
   bodyPartPickerList,
 }: Types) {
   return (
     <div css={style.wrapper}>
       <div css={style.header}>
-        <p css={style.headerText}>Select the areas you want to focus on</p>
+        <span css={style.textBackGround}>
+          <p css={style.headerText}>Last Friday, you did this area</p>
+          {/* <p css={style.headerText}>Select the areas you want to focus on</p> */}
+        </span>
+        <span css={style.backLine} />
       </div>
-      <span css={style.counter}>{activePicker.length}/2</span>
       <div css={style.controlsWrapper}>
         {bodyPartPickerList.map((section, idx) => {
           return (
@@ -31,19 +34,13 @@ function BodyPartPicker({
                   key={id}
                   isActive={activePicker.includes(id)}
                   styleCss={style.button}
-                  onClick={(e: any) =>
-                    activePicker.includes(id)
-                      ? setActivePicker(activePicker.filter((n) => n !== id))
-                      : activePicker.length < 2 &&
-                        setActivePicker([...activePicker, id])
-                  }
+                  onClick={(e: any) => handleButtonClick(id)}
                   text={name}
                 />
               ))}
             </div>
           );
         })}
-        <AppLogo />
       </div>
     </div>
   );
@@ -52,27 +49,44 @@ function BodyPartPicker({
 const style = {
   wrapper: css`
     width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: calc(45dvh - 71px);
     max-width: 480px;
     min-width: 300px;
-    border: 2px solid ${theme.colors.grey.default};
-    border-radius: ${theme.borderRadius.large};
+    border-radius: ${theme.borderRadius.large} ${theme.borderRadius.large} 0 0;
     display: flex;
     flex-direction: column;
-    margin: 0 auto 50px;
     background-color: ${theme.colors.grey["100"]};
+    z-index: 1;
   `,
   header: css`
-    background-color: ${theme.colors.grey["75"]};
     width: 100%;
-    padding: ${theme.borderRadius.default};
     text-align: center;
     border-radius: ${theme.borderRadius.large} ${theme.borderRadius.large} 0 0;
-    border-bottom: 2px solid ${theme.colors.grey.default};
     margin-bottom: 25px;
   `,
+  textBackGround: css`
+    background: ${theme.colors.grey[100]};
+    padding: 0 7px;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+    z-index: 1;
+    position: relative;
+  `,
+  backLine: css`
+    border: 1px solid ${theme.colors.white["50"]};
+    width: 100%;
+    display: block;
+    transform: translateY(-10px);
+    z-index: 0;
+    position: relative;
+  `,
   headerText: css`
-    color: ${theme.colors.white["100"]};
-    font-size: 16px;
+    color: ${theme.colors.white["50"]};
+    font-size: 18px;
+    font-weight: 700;
   `,
   counter: css`
     color: ${theme.colors.orange};
@@ -85,7 +99,6 @@ const style = {
     align-item: center;
     gap: 12px;
     justify-content: center;
-    padding: 5px 0 20px;
   `,
   subControlsWrapper: css`
     display: flex;

@@ -45,23 +45,26 @@ const landingTheme = {
       default: "#FEFFF0",
       100: "#EEE8DF",
       75: "#f5deb3",
+      50: "#c0bdba",
     },
     grey: {
       default: "#363739",
       100: "#171717",
       75: "#222324",
+      50: "#373737",
     },
 
     black: {
       default: "#000",
       deepDark: "#101419",
     },
-    orange: "#FFA048",
+    orange: "#FCA31D",
+    // orange: "#F39C18",
   },
 
   borderRadius: {
-    default: "0.8rem", // 12px
-    large: "1.25rem", // 20px
+    default: "1.25rem", // 20px
+    large: "2.5rem", // 40px
   },
 
   shadow: {
@@ -106,31 +109,33 @@ const landingTheme = {
     // },
   },
 
-  // media: {
-  //   section: { maxWidth: "1520px" },
-  //   breakpoints: {
-  //     mobile: 360,
-  //     tabletBreakPoint: 640,
-  //     tabletLandscape: 1024,
-  //     tablet: 1280,
-  //     desktop: 1920,
-  //   },
-  //   get mobile() {
-  //     return `@media (max-width: ${this.breakpoints.mobile}px)`;
-  //   },
-  //   get tabletBreakPoint() {
-  //     return `@media (min-width: ${this.breakpoints.tabletBreakPoint}px)`;
-  //   },
-  //   get tabletLandscape() {
-  //     return `@media (min-width: ${this.breakpoints.tabletLandscape}px)`;
-  //   },
-  //   get tablet() {
-  //     return `@media (min-width: ${this.breakpoints.tablet}px)`;
-  //   },
-  //   get desktop() {
-  //     return `@media (min-width: ${this.breakpoints.desktop}px)`;
-  //   },
-  // },
+  media: {
+    get mobileBreakPoint() {
+      return `@media screen and (min-width: ${this.configuration.breakpoints.mobile}px)`;
+    },
+    // get tabletBreakPoint() {
+    //   return `@media (min-width: ${this.breakpoints.tabletBreakPoint}px)`;
+    // },
+    // get tabletLandscape() {
+    //   return `@media (min-width: ${this.breakpoints.tabletLandscape}px)`;
+    // },
+    // get tablet() {
+    //   return `@media (min-width: ${this.breakpoints.tablet}px)`;
+    // },
+    // get desktop() {
+    //   return `@media (min-width: ${this.breakpoints.desktop}px)`;
+    // },
+    configuration: {
+      section: { maxWidth: "430px" },
+      breakpoints: {
+        mobile: 431,
+        // tabletBreakPoint: 640,
+        // tabletLandscape: 1024,
+        // tablet: 1280,
+        // desktop: 1920,
+      },
+    },
+  },
 };
 
 export default landingTheme;
