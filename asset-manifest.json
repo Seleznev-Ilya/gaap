@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/gaap/static/css/main.59b3803d.css",
-    "main.js": "/gaap/static/js/main.9ef1f8a3.js",
+    "main.css": "/gaap/static/css/main.241ca6a6.css",
+    "main.js": "/gaap/static/js/main.b400fa81.js",
     "index.html": "/gaap/index.html",
-    "main.59b3803d.css.map": "/gaap/static/css/main.59b3803d.css.map",
-    "main.9ef1f8a3.js.map": "/gaap/static/js/main.9ef1f8a3.js.map"
+    "main.241ca6a6.css.map": "/gaap/static/css/main.241ca6a6.css.map",
+    "main.b400fa81.js.map": "/gaap/static/js/main.b400fa81.js.map"
   },
   "entrypoints": [
-    "static/css/main.59b3803d.css",
-    "static/js/main.9ef1f8a3.js"
+    "static/css/main.241ca6a6.css",
+    "static/js/main.b400fa81.js"
   ]
 }
